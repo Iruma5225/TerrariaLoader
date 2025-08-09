@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <Button
+        android:id="@+id/select_apk_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Select Universal APK" />
+
+    <Button
+        android:id="@+id/select_zip_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Select Loader ZIP" />
+
+    <Button
+        android:id="@+id/inject_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Inject Loader" />
+
+    <TextView
+        android:id="@+id/status_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Status"
+        android:paddingTop="16dp"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+</LinearLayout>

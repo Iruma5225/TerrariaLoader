@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:padding="8dp"
+    android:background="?android:attr/selectableItemBackground"
+    android:minHeight="56dp">
+
+    <!-- Level Indicator Bar -->
+    <View
+        android:id="@+id/levelIndicator"
+        android:layout_width="4dp"
+        android:layout_height="match_parent"
+        android:layout_marginEnd="8dp"
+        android:background="#2196F3" />
+
+    <!-- Main Content -->
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <!-- Header Row (Timestamp, Level, Tag) -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="4dp">
+
+            <TextView
+                android:id="@+id/logTimestamp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="00:00:00"
+                android:textSize="11sp"
+                android:textColor="#666666"
+                android:fontFamily="monospace"
+                android:layout_marginEnd="8dp" />
+
+            <TextView
+                android:id="@+id/logLevel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="INFO"
+                android:textSize="11sp"
+                android:textStyle="bold"
+                android:textColor="#2196F3"
+                android:layout_marginEnd="8dp"
+                android:minWidth="48dp" />
+
+            <TextView
+                android:id="@+id/logTag"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="TAG"
+                android:textSize="11sp"
+                android:textColor="#666666"
+                android:textStyle="italic"
+                android:ellipsize="end"
+                android:maxLines="1" />
+
+        </LinearLayout>
+
+        <!-- Message Content -->
+        <TextView
+            android:id="@+id/logMessage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Log message content goes here and can span multiple lines if needed"
+            android:textSize="14sp"
+            android:textColor="#333333"
+            android:lineSpacingExtra="2dp"
+            android:textIsSelectable="true"
+            android:maxLines="10"
+            android:ellipsize="end" />
+
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- Header Section -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="DLL Mod Manager"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Status Section -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="#F5F5F5"
+            android:padding="12dp"
+            android:layout_marginBottom="16dp">
+
+            <TextView
+                android:id="@+id/statusText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="DLL Mods: 0 enabled, 0 disabled, 0 total"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="8dp" />
+
+            <TextView
+                android:id="@+id/loaderStatusText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="❌ No loader installed - DLL mods will not work"
+                android:textSize="14sp" />
+
+        </LinearLayout>
+
+        <!-- Loader Installation Section -->
+        <LinearLayout
+            android:id="@+id/loaderInfoSection"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="#E8F5E8"
+            android:padding="12dp"
+            android:layout_marginBottom="16dp"
+            android:visibility="gone">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Loader Installation"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="8dp" />
+
+            <Button
+                android:id="@+id/installLoaderBtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Install Loader"
+                android:layout_marginBottom="8dp" />
+
+            <Button
+                android:id="@+id/selectApkBtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Select Terraria APK"
+                android:layout_marginBottom="8dp" />
+
+        </LinearLayout>
+
+        <!-- Mod Management Section -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="DLL Mod Management"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="8dp" />
+
+        <Button
+            android:id="@+id/installDllBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Install DLL Mod"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Mod List -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/dllModRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:background="#F9F9F9"
+            android:padding="8dp"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Action Buttons -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginTop="16dp">
+
+            <Button
+                android:id="@+id/refreshBtn"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="Refresh"
+                android:layout_marginEnd="8dp" />
+
+            <Button
+                android:id="@+id/viewLogsBtn"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="View Logs"
+                android:layout_marginStart="8dp" />
+
+        </LinearLayout>
+
+        <!-- Information Section -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="DLL mods require MelonLoader or LemonLoader to be installed. Use 'Install Loader' to set up the required components."
+            android:textSize="12sp"
+            android:textColor="#666666"
+            android:layout_marginTop="16dp"
+            android:gravity="center" />
+
+    </LinearLayout>
+
+</ScrollView>

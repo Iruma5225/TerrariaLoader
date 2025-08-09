@@ -1,0 +1,308 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/rootLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:background="#E8F5E8">
+
+        <!-- Header Section -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_marginBottom="24dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="🌍 Terraria Mod Loader"
+                android:textSize="28sp"
+                android:textStyle="bold"
+                android:textColor="#2E7D32"
+                android:gravity="center"
+                android:layout_marginBottom="8dp" />
+
+            <TextView
+                android:id="@+id/loaderStatusText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Checking loader status..."
+                android:textSize="14sp"
+                android:textColor="#4CAF50"
+                android:gravity="center"
+                android:padding="12dp"
+                android:background="#F1F8E9"
+                android:layout_marginTop="8dp" />
+        </LinearLayout>
+
+        <!-- Setup & Installation Section -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/setupCard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="6dp"
+            app:cardBackgroundColor="#F1F8E9">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="🚀 Setup &amp; Installation"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:textColor="#2E7D32"
+                    android:layout_marginBottom="16dp" />
+
+                <Button
+                    android:id="@+id/unifiedSetupButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="🎯 Complete Setup Wizard"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:background="#4CAF50"
+                    android:textColor="@android:color/white"
+                    android:layout_marginBottom="12dp"
+                    android:minHeight="56dp"
+                    android:elevation="2dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="All-in-one wizard for MelonLoader installation and APK patching"
+                    android:textSize="12sp"
+                    android:textColor="#66BB6A"
+                    android:layout_marginBottom="16dp"
+                    android:gravity="center" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="2">
+
+                    <Button
+                        android:id="@+id/setupGuideButton"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:text="📖 Setup Guide"
+                        android:textSize="14sp"
+                        android:background="#81C784"
+                        android:textColor="@android:color/white"
+                        android:layout_marginEnd="6dp"
+                        android:minHeight="48dp" />
+
+                    <Button
+                        android:id="@+id/manualInstructionsButton"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:text="📋 Manual Steps"
+                        android:textSize="14sp"
+                        android:background="#A5D6A7"
+                        android:textColor="#2E7D32"
+                        android:layout_marginStart="6dp"
+                        android:minHeight="48dp" />
+                </LinearLayout>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Mod Management Section -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/modManagementCard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="6dp"
+            app:cardBackgroundColor="#E3F2FD">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="📦 Mod Management"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:textColor="#1565C0"
+                    android:layout_marginBottom="16dp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="2">
+
+                    <Button
+                        android:id="@+id/dexModManagerButton"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:text="📱 DEX/JAR Mods"
+                        android:textSize="14sp"
+                        android:background="#2196F3"
+                        android:textColor="@android:color/white"
+                        android:layout_marginEnd="6dp"
+                        android:minHeight="48dp" />
+
+                    <Button
+                        android:id="@+id/dllModManagerButton"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:text="🔧 DLL Mods"
+                        android:textSize="14sp"
+                        android:background="#FF9800"
+                        android:textColor="@android:color/white"
+                        android:layout_marginStart="6dp"
+                        android:minHeight="48dp" />
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="• DEX/JAR: Android Java mods (always available)\n• DLL: C# mods (requires MelonLoader)"
+                    android:textSize="12sp"
+                    android:textColor="#42A5F5"
+                    android:layout_marginTop="12dp"
+                    android:lineSpacingExtra="2dp" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Tools & Utilities Section -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/toolsCard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="6dp"
+            app:cardBackgroundColor="#F3E5F5">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="🛠️ Tools &amp; Utilities"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:textColor="#7B1FA2"
+                    android:layout_marginBottom="16dp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="3">
+
+                    <Button
+                        android:id="@+id/logViewerButton"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:text="📋 Logs"
+                        android:textSize="12sp"
+                        android:background="#9C27B0"
+                        android:textColor="@android:color/white"
+                        android:layout_marginEnd="4dp"
+                        android:minHeight="44dp" />
+
+                    <Button
+                        android:id="@+id/settingsButton"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:text="⚙️ Settings"
+                        android:textSize="12sp"
+                        android:background="#BA68C8"
+                        android:textColor="@android:color/white"
+                        android:layout_marginHorizontal="4dp"
+                        android:minHeight="44dp" />
+
+                    <Button
+                        android:id="@+id/sandboxButton"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:text="🧪 Sandbox"
+                        android:textSize="12sp"
+                        android:background="#CE93D8"
+                        android:textColor="#4A148C"
+                        android:layout_marginStart="4dp"
+                        android:minHeight="44dp" />
+                </LinearLayout>
+
+                <!-- ✅ Fixed Diagnostic Button -->
+                <Button
+                    android:id="@+id/diagnosticButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="🧪 Offline Diagnostic &amp; Repair"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:backgroundTint="#9C27B0"
+                    android:textColor="#FFFFFF"
+                    android:layout_marginTop="12dp"
+                    android:minHeight="48dp" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Navigation Section -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_marginTop="16dp">
+
+            <Button
+                android:id="@+id/backButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="← Back to App Selection"
+                android:textSize="14sp"
+                android:background="@android:color/transparent"
+                android:textColor="#666666"
+                android:minHeight="40dp" />
+        </LinearLayout>
+
+        <!-- Info Footer -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="💡 Tip: Start with 'Complete Setup Wizard' for the easiest experience!"
+            android:textSize="12sp"
+            android:textColor="#81C784"
+            android:gravity="center"
+            android:background="#F1F8E9"
+            android:padding="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp" />
+    </LinearLayout>
+</ScrollView>

@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp">
+
+        <!-- Header -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Terraria Loader Settings"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="16dp"
+            android:gravity="center" />
+
+        <!-- Mod Settings Section -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Mod Settings"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="8dp" />
+
+        <CheckBox
+            android:id="@+id/enableModsCheck"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Enable Mods by Default"
+            android:checked="true"
+            android:layout_marginBottom="8dp" />
+
+        <CheckBox
+            android:id="@+id/sandboxModeCheck"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Enable Sandbox Mode"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Log Settings Section -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Log Settings"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="8dp" />
+
+        <CheckBox
+            android:id="@+id/autoSaveLogsCheck"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Auto-save Logs"
+            android:layout_marginBottom="8dp" />
+
+        <CheckBox
+            android:id="@+id/debugModeCheck"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Enable Debug Mode"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Action Buttons Section -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Actions"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="8dp" />
+
+        <Button
+            android:id="@+id/clearLogsBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Clear All Logs"
+            android:layout_marginBottom="8dp" />
+
+        <Button
+            android:id="@+id/resetModsBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Reset All Mods"
+            android:layout_marginBottom="8dp" />
+
+        <Button
+            android:id="@+id/clearCacheBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Clear Cache"
+            android:layout_marginBottom="8dp" />
+
+        <Button
+            android:id="@+id/resetSettingsBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Reset Settings to Default"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Storage Info Section -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Storage Information"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="8dp" />
+
+        <TextView
+            android:id="@+id/storageInfo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Loading storage info..."
+            android:textSize="14sp"
+            android:textColor="#666666"
+            android:padding="8dp"
+            android:background="#F5F5F5"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Footer -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Settings are saved automatically"
+            android:textSize="12sp"
+            android:textColor="#999999"
+            android:gravity="center"
+            android:layout_marginTop="16dp" />
+
+    </LinearLayout>
+</ScrollView>

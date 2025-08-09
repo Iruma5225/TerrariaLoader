@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#F8F9FA">
+
+    <!-- Header Section -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="#FFFFFF"
+        android:elevation="4dp"
+        android:padding="16dp">
+
+        <!-- Title -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="📋 Advanced Log Viewer"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="#2E7D32"
+            android:gravity="center"
+            android:layout_marginBottom="8dp" />
+
+        <!-- Search Bar -->
+        <EditText
+            android:id="@+id/searchEditText"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:hint="🔍 Search logs (supports regex)..."
+            android:inputType="text"
+            android:background="@android:drawable/editbox_background"
+            android:padding="12dp"
+            android:textSize="14sp"
+            android:layout_marginBottom="12dp" />
+
+        <!-- Filter Controls Row 1 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="8dp">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:layout_marginEnd="8dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Category"
+                    android:textSize="12sp"
+                    android:textColor="#666666" />
+
+                <Spinner
+                    android:id="@+id/filterTypeSpinner"
+                    android:layout_width="match_parent"
+                    android:layout_height="36dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:layout_marginStart="8dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Time Range"
+                    android:textSize="12sp"
+                    android:textColor="#666666" />
+
+                <Spinner
+                    android:id="@+id/timeRangeSpinner"
+                    android:layout_width="match_parent"
+                    android:layout_height="36dp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <!-- Filter Controls Row 2 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="8dp">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginEnd="8dp">
+
+                <Switch
+                    android:id="@+id/regexModeSwitch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="8dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Regex Mode"
+                    android:textSize="12sp"
+                    android:textColor="#666666" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginStart="8dp">
+
+                <Switch
+                    android:id="@+id/highlightModeSwitch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="8dp"
+                    android:checked="true" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Highlight"
+                    android:textSize="12sp"
+                    android:textColor="#666666" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <!-- Status Row -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="8dp">
+
+            <TextView
+                android:id="@+id/logCountText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Showing 0 of 0 entries"
+                android:textSize="12sp"
+                android:textColor="#666666" />
+
+            <Button
+                android:id="@+id/clearFiltersBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="32dp"
+                android:text="Clear Filters"
+                android:textSize="10sp"
+                android:background="#FF9800"
+                android:textColor="@android:color/white"
+                android:minWidth="80dp" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/filterStatusText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="No filters active"
+            android:textSize="11sp"
+            android:textColor="#999999"
+            android:gravity="center" />
+
+        <!-- Advanced Filters Toggle -->
+        <LinearLayout
+            android:id="@+id/advancedFiltersToggle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:background="?android:attr/selectableItemBackground"
+            android:padding="8dp"
+            android:layout_marginTop="8dp">
+
+            <TextView
+                android:id="@+id/advancedFiltersToggleText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="▶ Show Advanced Filters"
+                android:textSize="12sp"
+                android:textColor="#2196F3"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+        <!-- Advanced Filters Section (Initially Hidden) -->
+        <LinearLayout
+            android:id="@+id/advancedFiltersLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="#F5F5F5"
+            android:padding="12dp"
+            android:layout_marginTop="8dp"
+            android:visibility="gone">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Advanced Filters"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:textColor="#333333"
+                android:layout_marginBottom="8dp" />
+
+            <!-- Additional filter controls can be added here -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Coming soon: Level filters, thread filters, and more..."
+                android:textSize="12sp"
+                android:textColor="#666666"
+                android:textStyle="italic" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <!-- Main Log Display -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/logRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="#FFFFFF"
+        android:scrollbars="vertical"
+        android:padding="8dp" />
+
+    <!-- Action Buttons Footer -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="#FFFFFF"
+        android:elevation="4dp"
+        android:padding="12dp">
+
+        <!-- Primary Actions Row -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="8dp">
+
+            <Button
+                android:id="@+id/exportDiagnosticBtn"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="48dp"
+                android:text="📦 Export Bundle"
+                android:textSize="14sp"
+                android:background="#4CAF50"
+                android:textColor="@android:color/white"
+                android:layout_marginEnd="6dp" />
+
+            <Button
+                android:id="@+id/refreshBtn"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="48dp"
+                android:text="🔄 Refresh"
+                android:textSize="14sp"
+                android:background="#2196F3"
+                android:textColor="@android:color/white"
+                android:layout_marginStart="6dp" />
+
+        </LinearLayout>
+
+        <!-- Status Text -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="💡 Use filters above to search logs. Export bundle includes all diagnostic data."
+            android:textSize="11sp"
+            android:textColor="#666666"
+            android:gravity="center"
+            android:lineSpacingExtra="2dp" />
+
+    </LinearLayout>
+
+</LinearLayout>

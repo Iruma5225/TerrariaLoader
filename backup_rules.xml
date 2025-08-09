@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<full-backup-content>
+    <!-- Include app-specific files -->
+    <include domain="file" path="." />
+    <include domain="database" path="." />
+    <include domain="sharedpref" path="." />
+    <include domain="external" path="Android/data/com.terrarialoader/" />
+
+    <!-- Exclude cache and logs if needed -->
+    <exclude domain="cache" path="." />
+    <exclude domain="file" path="logs/" />
+</full-backup-content>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/action_export_filtered"
+        android:title="Export Filtered Logs"
+        android:icon="@android:drawable/ic_menu_save"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_copy_selected"
+        android:title="Copy Selected"
+        android:icon="@android:drawable/ic_menu_edit"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_save_search"
+        android:title="Save Current Search"
+        android:icon="@android:drawable/ic_menu_add"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_refresh_logs"
+        android:title="Refresh Logs"
+        android:icon="@android:drawable/ic_popup_sync"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/action_settings"
+        android:title="Log Settings"
+        android:icon="@android:drawable/ic_menu_preferences"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_help"
+        android:title="Help"
+        android:icon="@android:drawable/ic_menu_help"
+        app:showAsAction="never" />
+
+</menu>
